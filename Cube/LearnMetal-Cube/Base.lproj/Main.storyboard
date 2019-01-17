@@ -708,6 +708,17 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="647" height="367"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="SaY-lR-Jhe" customClass="XYMetalView">
+                                <rect key="frame" x="0.0" y="0.0" width="647" height="367"/>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SaY-lR-Jhe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Pi0-KT-TAx"/>
+                            <constraint firstItem="SaY-lR-Jhe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="UwV-qz-vS7"/>
+                            <constraint firstAttribute="bottom" secondItem="SaY-lR-Jhe" secondAttribute="bottom" id="nJC-a5-jEd"/>
+                            <constraint firstAttribute="trailing" secondItem="SaY-lR-Jhe" secondAttribute="trailing" id="xML-dT-eWq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

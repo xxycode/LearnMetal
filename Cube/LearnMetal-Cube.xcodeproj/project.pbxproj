@@ -12,6 +12,8 @@
 		A95D2F8221F0847600BDDD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95D2F8121F0847600BDDD84 /* Assets.xcassets */; };
 		A95D2F8521F0847600BDDD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95D2F8321F0847600BDDD84 /* Main.storyboard */; };
 		A95D2F8821F0847600BDDD84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F8721F0847600BDDD84 /* main.m */; };
+		A95D2F9321F0A1B100BDDD84 /* XYMetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F8F21F0A1B100BDDD84 /* XYMetalView.m */; };
+		A95D2F9421F0A1B100BDDD84 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F9021F0A1B100BDDD84 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,10 @@
 		A95D2F8621F0847600BDDD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A95D2F8721F0847600BDDD84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A95D2F8921F0847600BDDD84 /* LearnMetal_Cube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearnMetal_Cube.entitlements; sourceTree = "<group>"; };
+		A95D2F8F21F0A1B100BDDD84 /* XYMetalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMetalView.m; sourceTree = "<group>"; };
+		A95D2F9021F0A1B100BDDD84 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		A95D2F9121F0A1B100BDDD84 /* XYShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYShaderTypes.h; sourceTree = "<group>"; };
+		A95D2F9221F0A1B100BDDD84 /* XYMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMetalView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,10 @@
 				A95D2F7C21F0847500BDDD84 /* AppDelegate.m */,
 				A95D2F7E21F0847500BDDD84 /* ViewController.h */,
 				A95D2F7F21F0847500BDDD84 /* ViewController.m */,
+				A95D2F9021F0A1B100BDDD84 /* Shaders.metal */,
+				A95D2F9221F0A1B100BDDD84 /* XYMetalView.h */,
+				A95D2F8F21F0A1B100BDDD84 /* XYMetalView.m */,
+				A95D2F9121F0A1B100BDDD84 /* XYShaderTypes.h */,
 				A95D2F8121F0847600BDDD84 /* Assets.xcassets */,
 				A95D2F8321F0847600BDDD84 /* Main.storyboard */,
 				A95D2F8621F0847600BDDD84 /* Info.plist */,
@@ -142,6 +152,8 @@
 				A95D2F8021F0847500BDDD84 /* ViewController.m in Sources */,
 				A95D2F8821F0847600BDDD84 /* main.m in Sources */,
 				A95D2F7D21F0847500BDDD84 /* AppDelegate.m in Sources */,
+				A95D2F9321F0A1B100BDDD84 /* XYMetalView.m in Sources */,
+				A95D2F9421F0A1B100BDDD84 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
