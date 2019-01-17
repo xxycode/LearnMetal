@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:"
+      name = "Cube">
+      <FileRef
+         location = "group:Cube/LearnMetal-Cube.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Triangle"
+      name = "Triangle">
+      <FileRef
+         location = "group:LearnMetal-Triangle.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

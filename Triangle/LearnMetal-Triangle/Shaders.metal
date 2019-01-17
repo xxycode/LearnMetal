@@ -25,6 +25,5 @@ vertex RasterizerData vertexShader(constant XYVertex *vertices [[buffer(XYVertex
 }
 
 fragment float4 fragmentShader(RasterizerData inVertex [[stage_in]]) {
-    return {0,0,0,1};
-    //return inVertex.color;
+    return inVertex.color;
 }

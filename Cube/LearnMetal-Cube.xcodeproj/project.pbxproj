@@ -7,34 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A9827E5321E3770300DD60E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9827E5221E3770300DD60E1 /* AppDelegate.m */; };
-		A9827E5621E3770300DD60E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9827E5521E3770300DD60E1 /* ViewController.m */; };
-		A9827E5821E3770400DD60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9827E5721E3770400DD60E1 /* Assets.xcassets */; };
-		A9827E5B21E3770400DD60E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9827E5921E3770400DD60E1 /* Main.storyboard */; };
-		A9827E5E21E3770400DD60E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9827E5D21E3770400DD60E1 /* main.m */; };
-		A9E0516E21E6E94500EA81C5 /* XYMetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E0516D21E6E94500EA81C5 /* XYMetalView.m */; };
-		A9E0517121E6F7D600EA81C5 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A9E0517021E6F7D600EA81C5 /* Shaders.metal */; };
+		A95D2F7D21F0847500BDDD84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F7C21F0847500BDDD84 /* AppDelegate.m */; };
+		A95D2F8021F0847500BDDD84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F7F21F0847500BDDD84 /* ViewController.m */; };
+		A95D2F8221F0847600BDDD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95D2F8121F0847600BDDD84 /* Assets.xcassets */; };
+		A95D2F8521F0847600BDDD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95D2F8321F0847600BDDD84 /* Main.storyboard */; };
+		A95D2F8821F0847600BDDD84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F8721F0847600BDDD84 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A9827E4E21E3770300DD60E1 /* LearnMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9827E5121E3770300DD60E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A9827E5221E3770300DD60E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A9827E5421E3770300DD60E1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A9827E5521E3770300DD60E1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A9827E5721E3770400DD60E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A9827E5A21E3770400DD60E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A9827E5C21E3770400DD60E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9827E5D21E3770400DD60E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A9827E5F21E3770400DD60E1 /* LearnMetal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearnMetal.entitlements; sourceTree = "<group>"; };
-		A9E0516C21E6E94500EA81C5 /* XYMetalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYMetalView.h; sourceTree = "<group>"; };
-		A9E0516D21E6E94500EA81C5 /* XYMetalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYMetalView.m; sourceTree = "<group>"; };
-		A9E0516F21E6F5C100EA81C5 /* XYShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYShaderTypes.h; sourceTree = "<group>"; };
-		A9E0517021E6F7D600EA81C5 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		A95D2F7821F0847500BDDD84 /* LearnMetal-Cube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LearnMetal-Cube.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A95D2F7B21F0847500BDDD84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A95D2F7C21F0847500BDDD84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A95D2F7E21F0847500BDDD84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A95D2F7F21F0847500BDDD84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A95D2F8121F0847600BDDD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A95D2F8421F0847600BDDD84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A95D2F8621F0847600BDDD84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A95D2F8721F0847600BDDD84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A95D2F8921F0847600BDDD84 /* LearnMetal_Cube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearnMetal_Cube.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A9827E4B21E3770300DD60E1 /* Frameworks */ = {
+		A95D2F7521F0847500BDDD84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,77 +38,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A9827E4521E3770300DD60E1 = {
+		A95D2F6F21F0847500BDDD84 = {
 			isa = PBXGroup;
 			children = (
-				A9827E5021E3770300DD60E1 /* LearnMetal */,
-				A9827E4F21E3770300DD60E1 /* Products */,
+				A95D2F7A21F0847500BDDD84 /* LearnMetal-Cube */,
+				A95D2F7921F0847500BDDD84 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A9827E4F21E3770300DD60E1 /* Products */ = {
+		A95D2F7921F0847500BDDD84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9827E4E21E3770300DD60E1 /* LearnMetal.app */,
+				A95D2F7821F0847500BDDD84 /* LearnMetal-Cube.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A9827E5021E3770300DD60E1 /* LearnMetal */ = {
+		A95D2F7A21F0847500BDDD84 /* LearnMetal-Cube */ = {
 			isa = PBXGroup;
 			children = (
-				A9827E5121E3770300DD60E1 /* AppDelegate.h */,
-				A9827E5221E3770300DD60E1 /* AppDelegate.m */,
-				A9827E5421E3770300DD60E1 /* ViewController.h */,
-				A9827E5521E3770300DD60E1 /* ViewController.m */,
-				A9E0516C21E6E94500EA81C5 /* XYMetalView.h */,
-				A9E0516D21E6E94500EA81C5 /* XYMetalView.m */,
-				A9E0517021E6F7D600EA81C5 /* Shaders.metal */,
-				A9E0516F21E6F5C100EA81C5 /* XYShaderTypes.h */,
-				A9827E5721E3770400DD60E1 /* Assets.xcassets */,
-				A9827E5921E3770400DD60E1 /* Main.storyboard */,
-				A9827E5C21E3770400DD60E1 /* Info.plist */,
-				A9827E5D21E3770400DD60E1 /* main.m */,
-				A9827E5F21E3770400DD60E1 /* LearnMetal.entitlements */,
+				A95D2F7B21F0847500BDDD84 /* AppDelegate.h */,
+				A95D2F7C21F0847500BDDD84 /* AppDelegate.m */,
+				A95D2F7E21F0847500BDDD84 /* ViewController.h */,
+				A95D2F7F21F0847500BDDD84 /* ViewController.m */,
+				A95D2F8121F0847600BDDD84 /* Assets.xcassets */,
+				A95D2F8321F0847600BDDD84 /* Main.storyboard */,
+				A95D2F8621F0847600BDDD84 /* Info.plist */,
+				A95D2F8721F0847600BDDD84 /* main.m */,
+				A95D2F8921F0847600BDDD84 /* LearnMetal_Cube.entitlements */,
 			);
-			path = LearnMetal;
+			path = "LearnMetal-Cube";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9827E4D21E3770300DD60E1 /* LearnMetal */ = {
+		A95D2F7721F0847500BDDD84 /* LearnMetal-Cube */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9827E6221E3770400DD60E1 /* Build configuration list for PBXNativeTarget "LearnMetal" */;
+			buildConfigurationList = A95D2F8C21F0847600BDDD84 /* Build configuration list for PBXNativeTarget "LearnMetal-Cube" */;
 			buildPhases = (
-				A9827E4A21E3770300DD60E1 /* Sources */,
-				A9827E4B21E3770300DD60E1 /* Frameworks */,
-				A9827E4C21E3770300DD60E1 /* Resources */,
+				A95D2F7421F0847500BDDD84 /* Sources */,
+				A95D2F7521F0847500BDDD84 /* Frameworks */,
+				A95D2F7621F0847500BDDD84 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LearnMetal;
-			productName = LearnMetal;
-			productReference = A9827E4E21E3770300DD60E1 /* LearnMetal.app */;
+			name = "LearnMetal-Cube";
+			productName = "LearnMetal-Cube";
+			productReference = A95D2F7821F0847500BDDD84 /* LearnMetal-Cube.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A9827E4621E3770300DD60E1 /* Project object */ = {
+		A95D2F7021F0847500BDDD84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = xxy;
 				TargetAttributes = {
-					A9827E4D21E3770300DD60E1 = {
+					A95D2F7721F0847500BDDD84 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
-			buildConfigurationList = A9827E4921E3770300DD60E1 /* Build configuration list for PBXProject "LearnMetal" */;
+			buildConfigurationList = A95D2F7321F0847500BDDD84 /* Build configuration list for PBXProject "LearnMetal-Cube" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,48 +112,46 @@
 				en,
 				Base,
 			);
-			mainGroup = A9827E4521E3770300DD60E1;
-			productRefGroup = A9827E4F21E3770300DD60E1 /* Products */;
+			mainGroup = A95D2F6F21F0847500BDDD84;
+			productRefGroup = A95D2F7921F0847500BDDD84 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A9827E4D21E3770300DD60E1 /* LearnMetal */,
+				A95D2F7721F0847500BDDD84 /* LearnMetal-Cube */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A9827E4C21E3770300DD60E1 /* Resources */ = {
+		A95D2F7621F0847500BDDD84 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9827E5821E3770400DD60E1 /* Assets.xcassets in Resources */,
-				A9827E5B21E3770400DD60E1 /* Main.storyboard in Resources */,
+				A95D2F8221F0847600BDDD84 /* Assets.xcassets in Resources */,
+				A95D2F8521F0847600BDDD84 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A9827E4A21E3770300DD60E1 /* Sources */ = {
+		A95D2F7421F0847500BDDD84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9827E5621E3770300DD60E1 /* ViewController.m in Sources */,
-				A9827E5E21E3770400DD60E1 /* main.m in Sources */,
-				A9827E5321E3770300DD60E1 /* AppDelegate.m in Sources */,
-				A9E0516E21E6E94500EA81C5 /* XYMetalView.m in Sources */,
-				A9E0517121E6F7D600EA81C5 /* Shaders.metal in Sources */,
+				A95D2F8021F0847500BDDD84 /* ViewController.m in Sources */,
+				A95D2F8821F0847600BDDD84 /* main.m in Sources */,
+				A95D2F7D21F0847500BDDD84 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A9827E5921E3770400DD60E1 /* Main.storyboard */ = {
+		A95D2F8321F0847600BDDD84 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A9827E5A21E3770400DD60E1 /* Base */,
+				A95D2F8421F0847600BDDD84 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -171,7 +159,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A9827E6021E3770400DD60E1 /* Debug */ = {
+		A95D2F8A21F0847600BDDD84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -230,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		A9827E6121E3770400DD60E1 /* Release */ = {
+		A95D2F8B21F0847600BDDD84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -282,36 +270,36 @@
 			};
 			name = Release;
 		};
-		A9827E6321E3770400DD60E1 /* Debug */ = {
+		A95D2F8D21F0847600BDDD84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = LearnMetal/LearnMetal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "LearnMetal-Cube/LearnMetal_Cube.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = LearnMetal/Info.plist;
+				INFOPLIST_FILE = "LearnMetal-Cube/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxy.LearnMetal;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxy.LearnMetal-Cube";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		A9827E6421E3770400DD60E1 /* Release */ = {
+		A95D2F8E21F0847600BDDD84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = LearnMetal/LearnMetal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "LearnMetal-Cube/LearnMetal_Cube.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = LearnMetal/Info.plist;
+				INFOPLIST_FILE = "LearnMetal-Cube/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxy.LearnMetal;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxy.LearnMetal-Cube";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -319,25 +307,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9827E4921E3770300DD60E1 /* Build configuration list for PBXProject "LearnMetal" */ = {
+		A95D2F7321F0847500BDDD84 /* Build configuration list for PBXProject "LearnMetal-Cube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A9827E6021E3770400DD60E1 /* Debug */,
-				A9827E6121E3770400DD60E1 /* Release */,
+				A95D2F8A21F0847600BDDD84 /* Debug */,
+				A95D2F8B21F0847600BDDD84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9827E6221E3770400DD60E1 /* Build configuration list for PBXNativeTarget "LearnMetal" */ = {
+		A95D2F8C21F0847600BDDD84 /* Build configuration list for PBXNativeTarget "LearnMetal-Cube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A9827E6321E3770400DD60E1 /* Debug */,
-				A9827E6421E3770400DD60E1 /* Release */,
+				A95D2F8D21F0847600BDDD84 /* Debug */,
+				A95D2F8E21F0847600BDDD84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A9827E4621E3770300DD60E1 /* Project object */;
+	rootObject = A95D2F7021F0847500BDDD84 /* Project object */;
 }
