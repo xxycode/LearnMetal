@@ -14,6 +14,11 @@ typedef struct {
     float4 color;
 } RasterizerData;
 
+struct Uniforms
+{
+    float4x4 modelViewProjectionMatrix;
+};
+
 vertex RasterizerData vertexShader(constant XYVertex *vertices [[buffer(XYVertexInputIndexVertices)]],
                                    uint vid [[vertex_id]]) {
     RasterizerData outVertex;

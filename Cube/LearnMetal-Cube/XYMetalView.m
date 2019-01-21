@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) id <MTLBuffer> indexBuffer;
 
+@property (nonatomic, strong) id <MTLDepthStencilState> depthStencilState;
+
 @end
 
 @implementation XYMetalView
@@ -45,14 +47,22 @@
 - (void)viewDidMoveToWindow {
     [super viewDidMoveToWindow];
     [self setupPipeLine];
+    //[self setupDepthStencilState];
     [self setupBuffer];
     [self render];
+}
+
+- (void)setupDepthStencilState {
+    MTLDepthStencilDescriptor *depthStencilDescriptor = [MTLDepthStencilDescriptor new];
+    depthStencilDescriptor.depthCompareFunction = MTLCompareFunctionLess;
+    depthStencilDescriptor.depthWriteEnabled = YES;
+    self.depthStencilState = [self.device newDepthStencilStateWithDescriptor:depthStencilDescriptor];
 }
 
 - (void)setupBuffer {
     XYVertex vertices[] = {
         //前面4个点
-        {{0.5, -0.5, 0.5},{1, 0, 0, 1}},
+        {{1, -0.5, 0.5},{1, 0, 0, 1}},
         {{-0.5, -0.5, 0.5},{0, 1, 0, 1}},
         {{-0.5, 0.5, 0.5},{0, 0, 1, 1}},
         {{0.5, 0.5, 0.5},{0, 1, 1, 1}},
@@ -65,12 +75,12 @@
     self.vertexBuffer = [self.device newBufferWithBytes:vertices length:sizeof(vertices) options:MTLResourceCPUCacheModeDefaultCache];
     
     uint16_t indices[] = {
-        0, 1, 2, 2, 0, 3,
-        0, 4, 7, 7, 0, 3,
-        3, 2, 6, 6, 3, 7,
-        6, 5, 1, 1, 6, 2,
-        0, 1, 5, 5, 0, 4,
-        4, 5, 6, 6, 4, 7,
+        0, 1, 2, 2, 3, 0,
+        0, 3, 7, 7, 4, 0,
+        0, 1, 5, 5, 4, 0,
+        2, 6, 7, 7, 3, 2,
+        2, 6, 5, 5, 1, 2,
+        4, 5, 6, 6, 7, 4,
     };
     
     self.indexBuffer = [self.device newBufferWithBytes:indices length:sizeof(indices) options:MTLResourceCPUCacheModeDefaultCache];
@@ -93,7 +103,10 @@
         [commandEncoder setRenderPipelineState:self.pipelineState];
         [commandEncoder setVertexBuffer:self.vertexBuffer offset:0 atIndex:0];
 //        [commandEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:6 indexType:MTLIndexTypeUInt16 indexBuffer:self.indexBuffer indexBufferOffset:0];
-        [commandEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:6 indexType:MTLIndexTypeUInt16 indexBuffer:self.indexBuffer indexBufferOffset:6];
+//        [commandEncoder setDepthStencilState:self.depthStencilState];
+//        [commandEncoder setFrontFacingWinding:MTLWindingCounterClockwise];
+//        [commandEncoder setCullMode:MTLCullModeBack];
+        [commandEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:3 indexType:MTLIndexTypeUInt16 indexBuffer:self.indexBuffer indexBufferOffset:0];
         [commandEncoder endEncoding];
         [commandBuffer presentDrawable:drawable];
         [commandBuffer commit];
