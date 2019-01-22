@@ -15,4 +15,11 @@
          location = "group:LearnMetal-Triangle.xcodeproj">
       </FileRef>
    </Group>
+   <Group
+      location = "group:/Users/xiaoxueyuan/Desktop/Projects/LearnMetal/Texure"
+      name = "Texure">
+      <FileRef
+         location = "group:LearnMetal-Texure.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>

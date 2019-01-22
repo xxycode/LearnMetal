@@ -19,11 +19,7 @@
 
 @property (nonatomic, strong) id <MTLRenderPipelineState> pipelineState;
 
-@property (nonatomic, strong) id <MTLBuffer> vertexBuffer;
-
-@property (nonatomic, strong) id <MTLBuffer> indexBuffer;
-
-@property (nonatomic, strong) id <MTLDepthStencilState> depthStencilState;
+@property (nonatomic, strong) id <MTLTexture> texture;
 
 @end
 
@@ -47,44 +43,36 @@
 - (void)viewDidMoveToWindow {
     [super viewDidMoveToWindow];
     [self setupPipeLine];
-    //[self setupDepthStencilState];
-    [self setupBuffer];
+    [self setupTexture];
     [self render];
 }
 
-- (void)setupDepthStencilState {
-    MTLDepthStencilDescriptor *depthStencilDescriptor = [MTLDepthStencilDescriptor new];
-    depthStencilDescriptor.depthCompareFunction = MTLCompareFunctionLess;
-    depthStencilDescriptor.depthWriteEnabled = YES;
-    self.depthStencilState = [self.device newDepthStencilStateWithDescriptor:depthStencilDescriptor];
-}
-
-- (void)setupBuffer {
-    XYVertex vertices[] = {
-        //前面4个点
-        {{0.5, -0.5, 0.5},{1, 0, 0, 1}},
-        {{-0.5, -0.5, 0.5},{0, 1, 0, 1}},
-        {{-0.5, 0.5, 0.5},{0, 0, 1, 1}},
-        {{0.5, 0.5, 0.5},{0, 1, 1, 1}},
-        //后面4个点
-        {{0.5, -0.5, -0.5},{1, 0, 0, 1}},
-        {{-0.5, -0.5, -0.5},{0, 1, 0, 1}},
-        {{-0.5, 0.5, -0.5},{0, 0, 1, 1}},
-        {{0.5, 0.5, -0.5},{0, 1, 1, 1}},
-    };
-    self.vertexBuffer = [self.device newBufferWithBytes:vertices length:sizeof(vertices) options:MTLResourceCPUCacheModeDefaultCache];
-    
-    uint16_t indices[] = {
-        0, 1, 2, 2, 3, 0,
-        0, 3, 7, 7, 4, 0,
-        0, 1, 5, 5, 4, 0,
-        2, 6, 7, 7, 3, 2,
-        2, 6, 5, 5, 1, 2,
-        4, 5, 6, 6, 7, 4,
-    };
-    
-    self.indexBuffer = [self.device newBufferWithBytes:indices length:sizeof(indices) options:MTLResourceCPUCacheModeDefaultCache];
-    self.indexBuffer.label = @"Indices";
+- (void)setupTexture {
+    NSImage *image = [NSImage imageNamed:@"pic"];
+    NSData* cocoaData = [image TIFFRepresentation];
+    CFDataRef carbonData = (__bridge CFDataRef)cocoaData;
+    CGImageSourceRef imageSourceRef = CGImageSourceCreateWithData(carbonData, NULL);
+    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, NULL);
+    CGFloat width = CGImageGetWidth(imageRef);
+    CGFloat height = CGImageGetHeight(imageRef);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    uint8 *rawData = malloc(width * height * 4 * sizeof(uint8));
+    int bytesPerPixel = 4;
+    int bytesPerRow = bytesPerPixel * width;
+    int bitsPerComponent = 8;
+    CGContextRef bitmapContext = CGBitmapContextCreate(rawData,
+                                                       width,
+                                                       height,
+                                                       bitsPerComponent,
+                                                       bytesPerRow,
+                                                       colorSpace,
+                                                       kCGImageAlphaPremultipliedLast | kCGImageByteOrder32Big);
+    CGContextDrawImage(bitmapContext, CGRectMake(0, 0, width, height), imageRef);
+    MTLTextureDescriptor *textureDescriptor = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm width:width height:height mipmapped:NO];
+    self.texture = [self.device newTextureWithDescriptor:textureDescriptor];
+    MTLRegion regin = MTLRegionMake2D(0, 0, width, height);
+    [self.texture replaceRegion:regin mipmapLevel:0 withBytes:rawData bytesPerRow:bytesPerRow];
+    free(rawData);
 }
 
 - (void)render {
@@ -95,18 +83,19 @@
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture;
         renderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
         renderPassDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
-        
         id <MTLCommandQueue> commandQueue = [self.device newCommandQueue];
         id <MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
         id <MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
-        
         [commandEncoder setRenderPipelineState:self.pipelineState];
-        [commandEncoder setVertexBuffer:self.vertexBuffer offset:0 atIndex:0];
-//        [commandEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:6 indexType:MTLIndexTypeUInt16 indexBuffer:self.indexBuffer indexBufferOffset:0];
-//        [commandEncoder setDepthStencilState:self.depthStencilState];
-//        [commandEncoder setFrontFacingWinding:MTLWindingCounterClockwise];
-//        [commandEncoder setCullMode:MTLCullModeBack];
-        [commandEncoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle indexCount:6 indexType:MTLIndexTypeUInt16 indexBuffer:self.indexBuffer indexBufferOffset:0];
+        XYVertex vertices[] = {
+            {{-1, -1},{0, 1}},
+            {{-1, 1},{0, 0}},
+            {{1, -1},{1, 1}},
+            {{1, 1},{1, 0}}
+        };
+        [commandEncoder setVertexBytes:vertices length:sizeof(vertices) atIndex:XYVertexInputIndexVertices];
+        [commandEncoder setFragmentTexture:self.texture atIndex:0];
+        [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4];
         [commandEncoder endEncoding];
         [commandBuffer presentDrawable:drawable];
         [commandBuffer commit];

@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9BD0C0821F6FE8000CD154B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0C0721F6FE8000CD154B /* AppDelegate.m */; };
+		A9BD0C0B21F6FE8000CD154B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0C0A21F6FE8000CD154B /* ViewController.m */; };
+		A9BD0C0D21F6FE8000CD154B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BD0C0C21F6FE8000CD154B /* Assets.xcassets */; };
+		A9BD0C1021F6FE8000CD154B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BD0C0E21F6FE8000CD154B /* Main.storyboard */; };
+		A9BD0C1321F6FE8000CD154B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0C1221F6FE8000CD154B /* main.m */; };
+		A9BD0C1E21F6FEBF00CD154B /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0C1A21F6FEBE00CD154B /* Shaders.metal */; };
+		A9BD0C1F21F6FEBF00CD154B /* XYMetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0C1D21F6FEBF00CD154B /* XYMetalView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9BD0C0321F6FE8000CD154B /* LearnMetal-Texure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LearnMetal-Texure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9BD0C0621F6FE8000CD154B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9BD0C0721F6FE8000CD154B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9BD0C0921F6FE8000CD154B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A9BD0C0A21F6FE8000CD154B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A9BD0C0C21F6FE8000CD154B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9BD0C0F21F6FE8000CD154B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9BD0C1121F6FE8000CD154B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BD0C1221F6FE8000CD154B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9BD0C1421F6FE8000CD154B /* LearnMetal_Texure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearnMetal_Texure.entitlements; sourceTree = "<group>"; };
+		A9BD0C1A21F6FEBE00CD154B /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		A9BD0C1B21F6FEBE00CD154B /* XYShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYShaderTypes.h; sourceTree = "<group>"; };
+		A9BD0C1C21F6FEBE00CD154B /* XYMetalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMetalView.h; sourceTree = "<group>"; };
+		A9BD0C1D21F6FEBF00CD154B /* XYMetalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMetalView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9BD0C0021F6FE8000CD154B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9BD0BFA21F6FE8000CD154B = {
+			isa = PBXGroup;
+			children = (
+				A9BD0C0521F6FE8000CD154B /* LearnMetal-Texure */,
+				A9BD0C0421F6FE8000CD154B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9BD0C0421F6FE8000CD154B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD0C0321F6FE8000CD154B /* LearnMetal-Texure.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9BD0C0521F6FE8000CD154B /* LearnMetal-Texure */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD0C0621F6FE8000CD154B /* AppDelegate.h */,
+				A9BD0C0721F6FE8000CD154B /* AppDelegate.m */,
+				A9BD0C0921F6FE8000CD154B /* ViewController.h */,
+				A9BD0C0A21F6FE8000CD154B /* ViewController.m */,
+				A9BD0C1A21F6FEBE00CD154B /* Shaders.metal */,
+				A9BD0C1C21F6FEBE00CD154B /* XYMetalView.h */,
+				A9BD0C1D21F6FEBF00CD154B /* XYMetalView.m */,
+				A9BD0C1B21F6FEBE00CD154B /* XYShaderTypes.h */,
+				A9BD0C0C21F6FE8000CD154B /* Assets.xcassets */,
+				A9BD0C0E21F6FE8000CD154B /* Main.storyboard */,
+				A9BD0C1121F6FE8000CD154B /* Info.plist */,
+				A9BD0C1221F6FE8000CD154B /* main.m */,
+				A9BD0C1421F6FE8000CD154B /* LearnMetal_Texure.entitlements */,
+			);
+			path = "LearnMetal-Texure";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9BD0C0221F6FE8000CD154B /* LearnMetal-Texure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9BD0C1721F6FE8000CD154B /* Build configuration list for PBXNativeTarget "LearnMetal-Texure" */;
+			buildPhases = (
+				A9BD0BFF21F6FE8000CD154B /* Sources */,
+				A9BD0C0021F6FE8000CD154B /* Frameworks */,
+				A9BD0C0121F6FE8000CD154B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LearnMetal-Texure";
+			productName = "LearnMetal-Texure";
+			productReference = A9BD0C0321F6FE8000CD154B /* LearnMetal-Texure.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9BD0BFB21F6FE8000CD154B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = xxy;
+				TargetAttributes = {
+					A9BD0C0221F6FE8000CD154B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = A9BD0BFE21F6FE8000CD154B /* Build configuration list for PBXProject "LearnMetal-Texure" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9BD0BFA21F6FE8000CD154B;
+			productRefGroup = A9BD0C0421F6FE8000CD154B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9BD0C0221F6FE8000CD154B /* LearnMetal-Texure */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9BD0C0121F6FE8000CD154B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BD0C0D21F6FE8000CD154B /* Assets.xcassets in Resources */,
+				A9BD0C1021F6FE8000CD154B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9BD0BFF21F6FE8000CD154B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9BD0C1E21F6FEBF00CD154B /* Shaders.metal in Sources */,
+				A9BD0C0B21F6FE8000CD154B /* ViewController.m in Sources */,
+				A9BD0C1321F6FE8000CD154B /* main.m in Sources */,
+				A9BD0C0821F6FE8000CD154B /* AppDelegate.m in Sources */,
+				A9BD0C1F21F6FEBF00CD154B /* XYMetalView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A9BD0C0E21F6FE8000CD154B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9BD0C0F21F6FE8000CD154B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9BD0C1521F6FE8000CD154B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A9BD0C1621F6FE8000CD154B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A9BD0C1821F6FE8000CD154B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LearnMetal-Texure/LearnMetal_Texure.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "LearnMetal-Texure/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxy.LearnMetal-Texure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9BD0C1921F6FE8000CD154B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "LearnMetal-Texure/LearnMetal_Texure.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "LearnMetal-Texure/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xxy.LearnMetal-Texure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9BD0BFE21F6FE8000CD154B /* Build configuration list for PBXProject "LearnMetal-Texure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BD0C1521F6FE8000CD154B /* Debug */,
+				A9BD0C1621F6FE8000CD154B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9BD0C1721F6FE8000CD154B /* Build configuration list for PBXNativeTarget "LearnMetal-Texure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9BD0C1821F6FE8000CD154B /* Debug */,
+				A9BD0C1921F6FE8000CD154B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9BD0BFB21F6FE8000CD154B /* Project object */;
+}
