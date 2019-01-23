@@ -30,9 +30,11 @@
     [self commonInit];
 }
 
+- (BOOL)wantsLayer {
+    return YES;
+}
 
 - (void)commonInit {
-    self.wantsLayer = YES;
     self.device = MTLCreateSystemDefaultDevice();
     self.metalLayer = [CAMetalLayer layer];
     self.metalLayer.frame = self.bounds;
