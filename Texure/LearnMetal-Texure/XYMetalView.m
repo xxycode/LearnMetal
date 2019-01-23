@@ -48,7 +48,7 @@
 }
 
 - (void)setupTexture {
-    NSImage *image = [NSImage imageNamed:@"pic"];
+    NSImage *image = [NSImage imageNamed:@"4"];
     NSData* cocoaData = [image TIFFRepresentation];
     CFDataRef carbonData = (__bridge CFDataRef)cocoaData;
     CGImageSourceRef imageSourceRef = CGImageSourceCreateWithData(carbonData, NULL);
@@ -87,13 +87,22 @@
         id <MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
         id <MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
         [commandEncoder setRenderPipelineState:self.pipelineState];
-        XYVertex vertices[] = {
+        //取左边的真实颜色
+        XYVertex rgbVertices[] = {
             {{-1, -1},{0, 1}},
             {{-1, 1},{0, 0}},
+            {{1, -1},{0.5, 1}},
+            {{1, 1},{0.5, 0}}
+        };
+        //取右边的遮罩通过灰度来计算alpha
+        XYVertex alphaVertices[] = {
+            {{-1, -1},{0.5, 1}},
+            {{-1, 1},{0.5, 0}},
             {{1, -1},{1, 1}},
             {{1, 1},{1, 0}}
         };
-        [commandEncoder setVertexBytes:vertices length:sizeof(vertices) atIndex:XYVertexInputIndexVertices];
+        [commandEncoder setVertexBytes:rgbVertices length:sizeof(rgbVertices) atIndex:XYVertexInputRGBVertices];
+        [commandEncoder setVertexBytes:alphaVertices length:sizeof(alphaVertices) atIndex:XYVertexInputAlphaVertices];
         [commandEncoder setFragmentTexture:self.texture atIndex:0];
         [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4];
         [commandEncoder endEncoding];
@@ -109,9 +118,17 @@
     
     MTLRenderPipelineDescriptor *pipelineDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     pipelineDescriptor.vertexFunction = vertexFunction;
-    pipelineDescriptor.fragmentFunction = fragmentFunction;
+    pipelineDescriptor.fragmentFunction = fragmentFunction; 
     pipelineDescriptor.colorAttachments[0].pixelFormat = self.metalLayer.pixelFormat;
-    
+    MTLRenderPipelineColorAttachmentDescriptor *renderbufferAttachment = pipelineDescriptor.colorAttachments[0];
+    renderbufferAttachment.blendingEnabled = YES; //启用混合
+    renderbufferAttachment.rgbBlendOperation = MTLBlendOperationAdd;
+    renderbufferAttachment.alphaBlendOperation = MTLBlendOperationAdd;
+    renderbufferAttachment.sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
+    renderbufferAttachment.sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
+    renderbufferAttachment.destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
+    renderbufferAttachment.destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
+
     self.pipelineState = [self.device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:nil];
 }
 

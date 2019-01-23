@@ -78,7 +78,14 @@
     pipelineDescriptor.vertexFunction = vertexFunction;
     pipelineDescriptor.fragmentFunction = fragmentFunction;
     pipelineDescriptor.colorAttachments[0].pixelFormat = self.metalLayer.pixelFormat;
-    
+    MTLRenderPipelineColorAttachmentDescriptor *renderbufferAttachment = pipelineDescriptor.colorAttachments[0];
+    renderbufferAttachment.blendingEnabled = YES; //启用混合
+    renderbufferAttachment.rgbBlendOperation = MTLBlendOperationAdd;
+    renderbufferAttachment.alphaBlendOperation = MTLBlendOperationAdd;
+    renderbufferAttachment.sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
+    renderbufferAttachment.sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
+    renderbufferAttachment.destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
+    renderbufferAttachment.destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     self.pipelineState = [self.device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:nil];
 }
 

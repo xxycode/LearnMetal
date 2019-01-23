@@ -21,8 +21,8 @@ typedef enum XYTextureIndex {
 } XYTextureIndex;
 
 typedef enum XYVertexInputIndex {
-    XYVertexInputIndexVertices = 0,
-    XYVertexInputIndexCount    = 1,
+    XYVertexInputRGBVertices   = 0,
+    XYVertexInputAlphaVertices = 1,
 } XYVertexInputIndex;
 
 #endif /* XYShaderTypes_h */
