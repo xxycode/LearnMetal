@@ -12,7 +12,7 @@
 		A9827E5821E3770400DD60E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9827E5721E3770400DD60E1 /* Assets.xcassets */; };
 		A9827E5B21E3770400DD60E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9827E5921E3770400DD60E1 /* Main.storyboard */; };
 		A9827E5E21E3770400DD60E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9827E5D21E3770400DD60E1 /* main.m */; };
-		A9E0516E21E6E94500EA81C5 /* XYMetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E0516D21E6E94500EA81C5 /* XYMetalView.m */; };
+		A9E0516E21E6E94500EA81C5 /* XYMetalView.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9E0516D21E6E94500EA81C5 /* XYMetalView.mm */; };
 		A9E0517121E6F7D600EA81C5 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A9E0517021E6F7D600EA81C5 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		A9827E5D21E3770400DD60E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9827E5F21E3770400DD60E1 /* LearnMetal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearnMetal.entitlements; sourceTree = "<group>"; };
 		A9E0516C21E6E94500EA81C5 /* XYMetalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYMetalView.h; sourceTree = "<group>"; };
-		A9E0516D21E6E94500EA81C5 /* XYMetalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYMetalView.m; sourceTree = "<group>"; };
+		A9E0516D21E6E94500EA81C5 /* XYMetalView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XYMetalView.mm; sourceTree = "<group>"; };
 		A9E0516F21E6F5C100EA81C5 /* XYShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYShaderTypes.h; sourceTree = "<group>"; };
 		A9E0517021E6F7D600EA81C5 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +68,7 @@
 				A9827E5421E3770300DD60E1 /* ViewController.h */,
 				A9827E5521E3770300DD60E1 /* ViewController.m */,
 				A9E0516C21E6E94500EA81C5 /* XYMetalView.h */,
-				A9E0516D21E6E94500EA81C5 /* XYMetalView.m */,
+				A9E0516D21E6E94500EA81C5 /* XYMetalView.mm */,
 				A9E0517021E6F7D600EA81C5 /* Shaders.metal */,
 				A9E0516F21E6F5C100EA81C5 /* XYShaderTypes.h */,
 				A9827E5721E3770400DD60E1 /* Assets.xcassets */,
@@ -152,7 +152,7 @@
 				A9827E5621E3770300DD60E1 /* ViewController.m in Sources */,
 				A9827E5E21E3770400DD60E1 /* main.m in Sources */,
 				A9827E5321E3770300DD60E1 /* AppDelegate.m in Sources */,
-				A9E0516E21E6E94500EA81C5 /* XYMetalView.m in Sources */,
+				A9E0516E21E6E94500EA81C5 /* XYMetalView.mm in Sources */,
 				A9E0517121E6F7D600EA81C5 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
