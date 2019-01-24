@@ -107,7 +107,6 @@
         [commandEncoder setVertexBuffer:vertexBuffer offset:0 atIndex:0];
         [commandEncoder drawPrimitives:MTLPrimitiveTypeLineStrip vertexStart:0 vertexCount:(vertCount + 1)];
         
-        
         [commandEncoder endEncoding];
         [commandBuffer presentDrawable:drawable];
         [commandBuffer commit];
