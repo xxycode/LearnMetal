@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XYMetalView : NSView
 
+- (void)rotationZ:(float)v;
+
+- (void)rotationX:(float)v;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -712,18 +712,35 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="SaY-lR-Jhe" customClass="XYMetalView">
                                 <rect key="frame" x="0.0" y="0.0" width="647" height="367"/>
                             </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A3W-bq-R3n">
+                                <rect key="frame" x="275" y="15" width="97" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Hty-1h-CFf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="frB-ee-n82"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="点击可拖动对象" id="gFv-4b-5pE">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="A3W-bq-R3n" secondAttribute="bottom" constant="15" id="Mqw-02-42n"/>
                             <constraint firstItem="SaY-lR-Jhe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Pi0-KT-TAx"/>
                             <constraint firstItem="SaY-lR-Jhe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="UwV-qz-vS7"/>
+                            <constraint firstItem="A3W-bq-R3n" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="lbH-ol-3xP"/>
                             <constraint firstAttribute="bottom" secondItem="SaY-lR-Jhe" secondAttribute="bottom" id="nJC-a5-jEd"/>
                             <constraint firstAttribute="trailing" secondItem="SaY-lR-Jhe" secondAttribute="trailing" id="xML-dT-eWq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="metalView" destination="SaY-lR-Jhe" id="aFX-A4-oi1"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158.5" y="811"/>
+            <point key="canvasLocation" x="158.5" y="810.5"/>
         </scene>
     </scenes>
 </document>

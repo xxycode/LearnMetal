@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A957374421FEDC5C00E56F2A /* MatrixTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A957374321FEDC5C00E56F2A /* MatrixTool.m */; };
+		A957374A21FEECAE00E56F2A /* XYSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A957374921FEECAE00E56F2A /* XYSliderCell.m */; };
 		A95D2F7D21F0847500BDDD84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F7C21F0847500BDDD84 /* AppDelegate.m */; };
 		A95D2F8021F0847500BDDD84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95D2F7F21F0847500BDDD84 /* ViewController.m */; };
 		A95D2F8221F0847600BDDD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95D2F8121F0847600BDDD84 /* Assets.xcassets */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A957374221FEDC5C00E56F2A /* MatrixTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixTool.h; sourceTree = "<group>"; };
+		A957374321FEDC5C00E56F2A /* MatrixTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatrixTool.m; sourceTree = "<group>"; };
+		A957374821FEECAE00E56F2A /* XYSliderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSliderCell.h; sourceTree = "<group>"; };
+		A957374921FEECAE00E56F2A /* XYSliderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYSliderCell.m; sourceTree = "<group>"; };
 		A95D2F7821F0847500BDDD84 /* LearnMetal-Cube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LearnMetal-Cube.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95D2F7B21F0847500BDDD84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A95D2F7C21F0847500BDDD84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,6 +77,10 @@
 				A95D2F9221F0A1B100BDDD84 /* XYMetalView.h */,
 				A95D2F8F21F0A1B100BDDD84 /* XYMetalView.m */,
 				A95D2F9121F0A1B100BDDD84 /* XYShaderTypes.h */,
+				A957374221FEDC5C00E56F2A /* MatrixTool.h */,
+				A957374321FEDC5C00E56F2A /* MatrixTool.m */,
+				A957374821FEECAE00E56F2A /* XYSliderCell.h */,
+				A957374921FEECAE00E56F2A /* XYSliderCell.m */,
 				A95D2F8121F0847600BDDD84 /* Assets.xcassets */,
 				A95D2F8321F0847600BDDD84 /* Main.storyboard */,
 				A95D2F8621F0847600BDDD84 /* Info.plist */,
@@ -149,10 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A957374421FEDC5C00E56F2A /* MatrixTool.m in Sources */,
 				A95D2F8021F0847500BDDD84 /* ViewController.m in Sources */,
 				A95D2F8821F0847600BDDD84 /* main.m in Sources */,
 				A95D2F7D21F0847500BDDD84 /* AppDelegate.m in Sources */,
 				A95D2F9321F0A1B100BDDD84 /* XYMetalView.m in Sources */,
+				A957374A21FEECAE00E56F2A /* XYSliderCell.m in Sources */,
 				A95D2F9421F0A1B100BDDD84 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

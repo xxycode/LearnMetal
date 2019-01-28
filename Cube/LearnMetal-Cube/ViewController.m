@@ -7,16 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "XYMetalView.h"
 
+@interface ViewController()
+
+@property (weak) IBOutlet XYMetalView *metalView;
+
+@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     // Do any additional setup after loading the view.
 }
-
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
