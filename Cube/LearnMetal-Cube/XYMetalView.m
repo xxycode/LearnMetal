@@ -57,6 +57,7 @@
     [self setupPipeLine];
     [self setupBuffer];
     [self render];
+    [NSTimer scheduledTimerWithTimeInterval:0.016 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
 }
 
 - (void)setupBuffer {
@@ -85,6 +86,13 @@
     self.indexBuffer = [self.device newBufferWithBytes:indices length:sizeof(indices) options:MTLResourceCPUCacheModeDefaultCache];
     self.indexBuffer.label = @"Indices";
     self.indexCount = sizeof(indices) / sizeof(uint16_t);
+}
+
+- (void)timerAction {
+    if (!_mouseDown) {
+        _rz += 0.05;
+        [self render];
+    }
 }
 
 - (void)mouseDown:(NSEvent *)event {
