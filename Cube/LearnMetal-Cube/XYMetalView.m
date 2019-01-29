@@ -66,21 +66,39 @@
     XYVertex vertices[] = {
              // 顶点坐标               顶点颜色
         {{-w, h,     0.0f},  {0.0f, 0.0f, 0.5f}},
-        {{w,  h,     0.0f},  {0.0f, 0.5f, 0.0f}},
-        {{-w, -h,    0.0f},  {0.5f, 0.0f, 1.0f}},
-        {{w,  -h,    0.0f},  {0.0f, 0.0f, 0.5f}},
-        {{0,  0.0f,  0.8f},  {1.0f, 1.0f, 1.0f}},
+        {{-w, -h,    0.0f},  {0.0f, 0.0f, 0.5f}},
+        {{0,  0.0f,  0.8f},  {0.0f, 0.0f, 0.5f}},
+        
+        {{-w, -h,    0.0f},  {0.0f, 0.5f, 0.0f}},
+        {{w,  -h,    0.0f},  {0.0f, 0.5f, 0.0f}},
+        {{0,  0.0f,  0.8f},  {0.0f, 0.5f, 0.0f}},
+        
+        {{w,  -h,    0.0f},  {0.5f, 0.0f, 1.0f}},
+        {{w,   h,    0.0f},  {0.5f, 0.0f, 1.0f}},
+        {{0,  0.0f,  0.8f},  {0.5f, 0.0f, 1.0f}},
+        
+        {{w,  h,     0.0f},  {0.5f, 0.0f, 0.0f}},
+        {{-w, h,     0.0f},  {0.5f, 0.0f, 0.0f}},
+        {{0,  0.0f,  0.8f},  {0.5f, 0.0f, 0.0f}},
+        
+        {{-w,   h,   0.0f},  {1.0f, 1.0f, 1.0f}},
+        {{-w,  -h,   0.0f},  {1.0f, 1.0f, 1.0f}},
+        {{w,   -h,   0.0f},  {1.0f, 1.0f, 1.0f}},
+        
+        {{w,  -h,    0.0f},  {1.0f, 1.0f, 1.0f}},
+        {{-w,  h,    0.0f},  {1.0f, 1.0f, 1.0f}},
+        {{w,   h,    0.0f},  {1.0f, 1.0f, 1.0f}},
     };
     self.vertexBuffer = [self.device newBufferWithBytes:vertices length:sizeof(vertices) options:MTLResourceCPUCacheModeDefaultCache];
     
     uint16_t indices[] = {
         // 索引
-        0, 3, 2,
-        0, 1, 3,
-        0, 2, 4,
-        0, 4, 1,
-        2, 3, 4,
-        1, 4, 3,
+        0,  1,  2,
+        3,  4,  5,
+        6,  7,  8,
+        9,  10, 11,
+        12, 14, 13,
+        15, 16, 17,
     };
     
     self.indexBuffer = [self.device newBufferWithBytes:indices length:sizeof(indices) options:MTLResourceCPUCacheModeDefaultCache];

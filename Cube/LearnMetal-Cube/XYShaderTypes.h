@@ -14,11 +14,13 @@
 typedef struct {
     vector_float3 position;
     vector_float4 color;
+    vector_float2 textureCoordinate;
 } XYVertex;
 
 typedef enum XYVertexInputIndex {
     XYVertexInputIndexVertices = 0,
-    XYVertexInputIndexMatrix
+    XYVertexInputIndexMatrix,
+    XYVertexInputIndexColors
 } XYVertexInputIndex;
 
 typedef struct {

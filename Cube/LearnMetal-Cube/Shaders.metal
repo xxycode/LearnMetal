@@ -12,6 +12,7 @@ using namespace metal;
 typedef struct {
     float4 position [[position]];
     float4 color;
+    float2 textureCoordinate;
 } RasterizerData;
 
 
@@ -21,7 +22,6 @@ vertex RasterizerData vertexShader(constant XYVertex *vertices [[buffer(XYVertex
     RasterizerData outVertex;
     
     outVertex.position = matrix->projectionMatrix * matrix->modelViewMatrix  * vector_float4(vertices[vid].position, 1.0);
-
     outVertex.color = vertices[vid].color;
     
     return outVertex;
