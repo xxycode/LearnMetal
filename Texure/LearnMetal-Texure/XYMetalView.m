@@ -105,7 +105,7 @@
         };
         [commandEncoder setVertexBytes:rgbVertices length:sizeof(rgbVertices) atIndex:XYVertexInputRGBVertices];
         [commandEncoder setVertexBytes:alphaVertices length:sizeof(alphaVertices) atIndex:XYVertexInputAlphaVertices];
-        [commandEncoder setFragmentTexture:self.texture atIndex:0];
+        [commandEncoder setFragmentTexture:self.texture atIndex:XYTextureIndexBaseColor];
         [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4];
         [commandEncoder endEncoding];
         [commandBuffer presentDrawable:drawable];
