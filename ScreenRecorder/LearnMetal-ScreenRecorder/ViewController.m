@@ -39,13 +39,6 @@
     self.mCaptureSession = [[AVCaptureSession alloc] init];
     self.mCaptureSession.sessionPreset = AVCaptureSessionPresetMedium;
     self.mProcessQueue = dispatch_queue_create("mProcessQueue", DISPATCH_QUEUE_SERIAL); // 串行队列
-    AVCaptureDevice *inputCamera = nil;
-    NSArray *devices = [AVCaptureDevice devices];
-    for (AVCaptureDevice *device in devices) {
-        if ([device position] == AVCaptureDevicePositionBack) {
-            inputCamera = device;
-        }
-    }
     self.mCaptureDeviceInput = [[AVCaptureScreenInput alloc] init];
     if ([self.mCaptureSession canAddInput:self.mCaptureDeviceInput]) {
         [self.mCaptureSession addInput:self.mCaptureDeviceInput];
