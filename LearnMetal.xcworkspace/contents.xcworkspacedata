@@ -2,6 +2,13 @@
 <Workspace
    version = "1.0">
    <Group
+      location = "group:ScreenRecorder"
+      name = "ScreenRecorder">
+      <FileRef
+         location = "group:LearnMetal-ScreenRecorder.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
       location = "container:"
       name = "Cube">
       <FileRef
