@@ -32,5 +32,5 @@ fragment float4 fragmentShader(RasterizerData inVertex [[stage_in]],
     constexpr sampler textureSampler (mag_filter::linear,
                                       min_filter::linear);
     float4 color = float4(tex2d.sample(textureSampler, inVertex.texCoords));
-    return float4(tex2d.sample(textureSampler, inVertex.texCoords).rgb, color.a * inVertex.alpha);
+    return float4(color.rgb, color.a * inVertex.alpha);
 }
