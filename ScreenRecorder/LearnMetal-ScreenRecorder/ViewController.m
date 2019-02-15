@@ -37,9 +37,10 @@
 
 - (void)setupCaptureSession {
     self.mCaptureSession = [[AVCaptureSession alloc] init];
-    self.mCaptureSession.sessionPreset = AVCaptureSessionPresetMedium;
+    self.mCaptureSession.sessionPreset = AVCaptureSessionPresetHigh;
     self.mProcessQueue = dispatch_queue_create("mProcessQueue", DISPATCH_QUEUE_SERIAL); // 串行队列
     self.mCaptureDeviceInput = [[AVCaptureScreenInput alloc] init];
+    self.mCaptureDeviceInput.scaleFactor = 2;
     if ([self.mCaptureSession canAddInput:self.mCaptureDeviceInput]) {
         [self.mCaptureSession addInput:self.mCaptureDeviceInput];
     }

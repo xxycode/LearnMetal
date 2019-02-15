@@ -23,6 +23,8 @@
 
 @property (nonatomic, assign) CVMetalTextureCacheRef textureCache; //output
 
+@property (nonatomic, strong) id <MTLTexture> maskTexture;
+
 @end
 
 @implementation XYMetalView
@@ -46,6 +48,35 @@
 - (void)viewDidMoveToWindow {
     [super viewDidMoveToWindow];
     [self setupPipeLine];
+    [self setupMaskTexture];
+}
+
+- (void)setupMaskTexture {
+    NSImage *image = [NSImage imageNamed:@"4"];
+    NSData* cocoaData = [image TIFFRepresentation];
+    CFDataRef carbonData = (__bridge CFDataRef)cocoaData;
+    CGImageSourceRef imageSourceRef = CGImageSourceCreateWithData(carbonData, NULL);
+    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, NULL);
+    CGFloat width = CGImageGetWidth(imageRef);
+    CGFloat height = CGImageGetHeight(imageRef);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    uint8 *rawData = malloc(width * height * 4 * sizeof(uint8));
+    int bytesPerPixel = 4;
+    int bytesPerRow = bytesPerPixel * width;
+    int bitsPerComponent = 8;
+    CGContextRef bitmapContext = CGBitmapContextCreate(rawData,
+                                                       width,
+                                                       height,
+                                                       bitsPerComponent,
+                                                       bytesPerRow,
+                                                       colorSpace,
+                                                       kCGImageAlphaPremultipliedLast | kCGImageByteOrder32Big);
+    CGContextDrawImage(bitmapContext, CGRectMake(0, 0, width, height), imageRef);
+    MTLTextureDescriptor *textureDescriptor = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm width:width height:height mipmapped:NO];
+    self.maskTexture = [self.device newTextureWithDescriptor:textureDescriptor];
+    MTLRegion regin = MTLRegionMake2D(0, 0, width, height);
+    [self.maskTexture replaceRegion:regin mipmapLevel:0 withBytes:rawData bytesPerRow:bytesPerRow];
+    free(rawData);
 }
 
 - (void)render {
@@ -61,14 +92,23 @@
         id <MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
         [commandEncoder setRenderPipelineState:self.pipelineState];
         XYVertex vertices[] = {
-            {{-1, -1},{0, 1}},
-            {{-1, 1},{0, 0}},
-            {{1, -1},{1, 1}},
-            {{1, 1},{1, 0}}
+            //采集画面顶点
+            //顶点坐标 纹理坐标 透明度
+            {{-1, -1},{0, 1},1},
+            {{-1, 1},{0, 0},1},
+            {{1, -1},{1, 1},1},
+            {{1, 1},{1, 0},1},
+            //水印顶点
+            {{-1, 1},{0, 0},0.5},
+            {{-1, 0.7},{0, 1},0.5},
+            {{-0.7, 1},{1, 0},0.5},
+            {{-0.7, 0.7},{1, 1},0.5},
         };
-        [commandEncoder setVertexBytes:vertices length:sizeof(vertices) atIndex:XYVertexInputRGBVertices];
-        [commandEncoder setFragmentTexture:self.texture atIndex:XYTextureIndexBaseColor];
+        [commandEncoder setVertexBytes:vertices length:sizeof(vertices) atIndex:XYVertexMainVertices];
+        [commandEncoder setFragmentTexture:self.texture atIndex:XYTextureIndexBaseContent];
         [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4];
+        [commandEncoder setFragmentTexture:self.maskTexture atIndex:XYTextureIndexBaseContent];
+        [commandEncoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:4 vertexCount:4];
         [commandEncoder endEncoding];
         [commandBuffer presentDrawable:drawable];
         [commandBuffer commit];
@@ -89,8 +129,6 @@
 }
 
 - (void)setupPipeLine {
-    
-    
     id <MTLLibrary> library = [self.device newDefaultLibrary];
     id <MTLFunction> vertexFunction = [library newFunctionWithName:@"vertexShader"];
     id <MTLFunction> fragmentFunction = [library newFunctionWithName:@"fragmentShader"];
@@ -104,7 +142,7 @@
     renderbufferAttachment.rgbBlendOperation = MTLBlendOperationAdd;
     renderbufferAttachment.alphaBlendOperation = MTLBlendOperationAdd;
     renderbufferAttachment.sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
-    renderbufferAttachment.sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
+    renderbufferAttachment.sourceAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     renderbufferAttachment.destinationRGBBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     renderbufferAttachment.destinationAlphaBlendFactor = MTLBlendFactorOneMinusSourceAlpha;
     self.pipelineState = [self.device newRenderPipelineStateWithDescriptor:pipelineDescriptor error:nil];

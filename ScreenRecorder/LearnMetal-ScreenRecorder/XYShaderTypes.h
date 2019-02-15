@@ -14,13 +14,16 @@
 typedef struct {
     vector_float2 position;
     vector_float2 textureCoordinate;
+    float alpha;
 } XYVertex;
 
 typedef enum XYTextureIndex {
-    XYTextureIndexBaseColor = 0,
+    XYTextureIndexBaseContent = 0,
+    XYTextureIndexMaskContent = 1
 } XYTextureIndex;
 
 typedef enum XYVertexInputIndex {
-    XYVertexInputRGBVertices   = 0,
+    XYVertexMainVertices = 0,
+    XYVertexMaskVertices
 } XYVertexInputIndex;
 #endif /* XYShaderTypes_h */
